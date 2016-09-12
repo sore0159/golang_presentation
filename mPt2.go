@@ -23,8 +23,15 @@ func mainPartTwo(d *pastries.Donut, b *pastries.Bismarck) {
 	if j, err := b.MarshalJSON(); err != nil {
 		panic("errorchecking is just good sense")
 	} else {
-		log.Println("Bismark JSON example:",
+		log.Println("Bismarck JSON example:",
 			string(j))
-		//{"Price":6,"GoesBad":10,"EncodedAt":"2016-09-10T13:52:28.828493223-05:00"}
+		// {"Price":6,"GoesBad":10,"EncodedAt":"2016-09-10T13:52:28.828493223-05:00"}
 	}
+	if j, err := b2.MarshalJSON(); err != nil {
+		panic("errorchecking is just good sense")
+	} else {
+		log.Println("Berliner Faulty JSON example:",
+			string(j))
+	}
+	// {"Price":6,"Sprinkles":false,"Filling":false}
 }

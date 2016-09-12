@@ -3,9 +3,9 @@ package pastries
 
 //func (b *Bismarck) IsBargain() bool {
 //	if b.HasCreamFilling() {
-//		return b.Price < 3
+//		return b.Price < 10
 //	} else {
-//		return b.Price < 2
+//		return b.Price < 5
 //	}
 //}
 

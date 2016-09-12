@@ -3,6 +3,7 @@ package pastries
 
 import (
 	"encoding/json"
+	"log"
 	"time"
 )
 
@@ -23,8 +24,15 @@ type BismarckJSON struct {
 
 func (b *Bismarck) MarshalJSON() (data []byte, err error) {
 	b2 := (*Berliner)(b)
-	return json.Marshal(BismarckJSON{
+	return json.Marshal( /* & */ BismarckJSON{
 		Berliner:  *b2,
 		EncodedAt: time.Now(),
 	})
+}
+
+func (d *Donut) MarshalJSON() (data []byte, err error) {
+	log.Println("---Donut Marshal Ping---")
+	type DonutAlias Donut
+	return json.Marshal((*DonutAlias)(d))
+	//return json.Marshal(*d)
 }
